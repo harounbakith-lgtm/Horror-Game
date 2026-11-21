@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<title>ABANDONED HOSPITAL</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="cv"></canvas>
+
+<div id="hud" class="hidden">
+  <div id="inv"></div>
+  <div id="bars">
+    <div class="bar"><span>🔦</span><div class="track"><div class="fill" id="batFill"></div></div></div>
+    <div class="bar"><span>⚡</span><div class="track"><div class="fill sta" id="staFill"></div></div></div>
+  </div>
+  <button id="pauseBtn" class="ui">II</button>
+  <button id="skipBtn" class="ui hidden">PASSER ›</button>
+  <div id="msg"></div>
+  <div id="big"></div>
+</div>
+
+<div id="touch" class="hidden">
+  <div id="zoneL"></div>
+  <div id="zoneR"></div>
+  <div id="stick"><div id="knob"></div></div>
+  <button id="bInteract" class="gbtn round hidden"><span>INTERAGIR</span><small id="hint"></small></button>
+  <div id="btns">
+    <button id="bRun" class="gbtn">COURIR</button>
+    <button id="bCrouch" class="gbtn">S'ACCROUPIR</button>
+    <button id="bLamp" class="gbtn">LAMPE</button>
+  </div>
+</div>
+
+<div id="menu" class="screen">
+  <h1 class="title">ABANDONED<br>HOSPITAL</h1>
+  <button id="btnPlay" class="mbtn">JOUER</button>
+  <button id="btnSettings" class="mbtn">PARAMÈTRES</button>
+  <button id="btnCredits" class="mbtn">CRÉDITS</button>
+</div>
+
+<div id="settings" class="screen hidden">
+  <h2>PARAMÈTRES</h2>
+  <label>Volume <input type="range" id="setVol" min="0" max="1" step="0.05"></label>
+  <label>Sensibilité caméra <input type="range" id="setSens" min="0.4" max="2.5" step="0.1"></label>
+  <div class="row">Qualité graphique
+    <button class="mbtn small q" data-q="0">BASSE</button>
+    <button class="mbtn small q" data-q="1">MOYENNE</button>
+    <button class="mbtn small q" data-q="2">HAUTE</button>
+  </div>
+  <div class="row">Effets (poussière, grain, brouillard)
+    <button id="setFx" class="mbtn small">OUI</button>
+  </div>
+  <button id="btnSetBack" class="mbtn">RETOUR</button>
+</div>
+
+<div id="credits" class="screen hidden">
+  <h2>CRÉDITS</h2>
+  <p>ABANDONED HOSPITAL<br>Jeu d'horreur FPS mobile<br>Moteur raycasting, sons et graphismes générés par code.<br>Aucune ressource externe.</p>
+  <button id="btnCredBack" class="mbtn">RETOUR</button>
+</div>
+
+<div id="docModal" class="screen hidden">
+  <div class="paper"><h3 id="docTitle"></h3><p id="docText"></p></div>
+  <button id="btnDocClose" class="mbtn">FERMER</button>
+</div>
+
+<div id="pauseMenu" class="screen hidden">
+  <h2>PAUSE</h2>
+  <button id="btnResume" class="mbtn">REPRENDRE</button>
+  <button id="btnPauseMenu" class="mbtn">MENU PRINCIPAL</button>
+</div>
+
+<div id="gameover" class="screen hidden">
+  <h1 class="dead">VOUS ÊTES MORT</h1>
+  <button id="btnRestart" class="mbtn">RECOMMENCER</button>
+  <button id="btnGoMenu" class="mbtn">MENU PRINCIPAL</button>
+</div>
+
+<div id="endPanel" class="screen hidden">
+  <p class="endtxt">FIN</p>
+  <button id="btnEndReplay" class="mbtn">REJOUER</button>
+  <button id="btnEndMenu" class="mbtn">MENU PRINCIPAL</button>
+</div>
+
+<div id="rotate" class="screen hidden"><p>📱↻<br>Tourne ton téléphone<br>en mode paysage</p></div>
+
+<script src="game.js"></script>
+</body>
+</html>
